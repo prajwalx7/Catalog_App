@@ -9,7 +9,7 @@ class MyDrawer extends StatelessWidget {
         "https://www.cnet.com/a/img/resize/8606d5468e323eba6bc8dffb0c3e92cfa711c069/hub/2020/03/05/9f593ff6-9b11-4ca5-9ad1-23d3e2759b10/duckduckgo-logo-gradient.jpg?auto=webp&width=1092";
     return Drawer(
       child: Container(
-        color: Colors.grey.shade500,
+        color: Color.fromARGB(255, 229, 227, 227),
         child: ListView(
           children: [
             DrawerHeader(
