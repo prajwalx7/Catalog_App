@@ -3,7 +3,7 @@ class CatalogModel {
     Item(
       id: 1,
       name: "Nike Air Force 1",
-      desc: "xyz",
+      desc: "Men's Shoes",
       price: 4200,
       color: "#33505a",
       image:

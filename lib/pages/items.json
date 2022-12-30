@@ -1,0 +1,50 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Product 1",
+        "desc": "This is the first product in the catalog",
+        "price": 9.99,
+        "color": "#33505a",
+        "image_url": "https://example.com/product1.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Product 2",
+        "desc": "This is the second product in the catalog",
+        "price": 19.99,
+        "color": "#33505a",
+        "image_url": "https://example.com/product2.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Product 3",
+        "desc": "This is the third product in the catalog",
+        "price": 29.99,
+        "color": "#33505a",
+        "image_url": "https://example.com/product3.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Product 3",
+        "price": 29.99,
+        "description": "This is the third product in the catalog",
+        "image_url": "https://example.com/product3.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Product 3",
+        "price": 29.99,
+        "description": "This is the third product in the catalog",
+        "image_url": "https://example.com/product3.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Product 3",
+        "price": 29.99,
+        "description": "This is the third product in the catalog",
+        "image_url": "https://example.com/product3.jpg"
+      }
+    ]
+  }
+  

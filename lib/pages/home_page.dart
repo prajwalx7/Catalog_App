@@ -1,56 +1,60 @@
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/models/catalog.dart';
+import 'package:molten_navigationbar_flutter/molten_navigationbar_flutter.dart';
 import 'package:flutter_catalog/widgets/drawer.dart';
 import 'package:flutter_catalog/widgets/item_widget.dart';
 
 // ignore: use_key_in_widget_constructors
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   // final int days = 30;
-  // final String name = "codepur";
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(15, (index) => CatalogModel.items[0]);
+    int selectedIndex = 0;
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blueAccent,
-        items: [
-          CurvedNavigationBarItem(
-            child: Icon(Icons.home_outlined),
-            label: 'Home',
+      backgroundColor: Colors.deepPurple,
+      bottomNavigationBar: MoltenBottomNavigationBar(
+        barColor: Colors.black,
+        selectedIndex: selectedIndex,
+        onTabChange: (clickedIndex) {
+          setState(() {
+            selectedIndex = clickedIndex;
+          });
+        },
+        tabs: [
+          MoltenTab(
+            icon: Icon(Icons.home),
           ),
-          CurvedNavigationBarItem(
-            child: Icon(Icons.search),
-            label: 'Search',
+          MoltenTab(
+            icon: Icon(Icons.search),
           ),
-          CurvedNavigationBarItem(
-            child: Icon(Icons.chat_bubble_outline),
-            label: 'Chat',
+          MoltenTab(
+            icon: Icon(Icons.favorite),
           ),
-          CurvedNavigationBarItem(
-            child: Icon(Icons.newspaper),
-            label: 'Feed',
-          ),
-          CurvedNavigationBarItem(
-            child: Icon(Icons.perm_identity),
-            label: 'Personal',
+          MoltenTab(
+            icon: Icon(Icons.person),
           ),
         ],
-        onTap: (index) {
-          // Handle button tap
-        },
       ),
       appBar: AppBar(
         title: Text("Products"),
       ),
-      body: ListView.builder(
-        itemCount: CatalogModel.items.length,
-        itemBuilder: (context, index) {
-          return ItemWidget(
-            item: CatalogModel.items[index],
-            key: Key('k'),
-          );
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: dummyList[index],
+              key: Key('k'),
+            );
+          },
+        ),
       ),
       drawer: MyDrawer(),
     );

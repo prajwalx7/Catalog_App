@@ -5,7 +5,7 @@ class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final imageUrl =
+    const imageUrl =
         "https://www.cnet.com/a/img/resize/8606d5468e323eba6bc8dffb0c3e92cfa711c069/hub/2020/03/05/9f593ff6-9b11-4ca5-9ad1-23d3e2759b10/duckduckgo-logo-gradient.jpg?auto=webp&width=1092";
     return Drawer(
       child: Container(
