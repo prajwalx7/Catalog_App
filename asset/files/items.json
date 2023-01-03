@@ -1,0 +1,53 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Boat Flash Edition",
+        "desc": "Unisex Watch",
+        "price": "₹1799",
+        "color": "#33505a",
+        "image_url": "https://www.nexhour.com/uploads/nexhour-ecommerce-india-private-limited/products/1-812194l-485244_l.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Realme 9 pro+",
+        "desc": "OIS camera setup",
+        "price": "₹27999",
+        "color": "#33505a",
+        "image_url": "https://s3b.cashify.in/gpro/uploads/2021/04/16171243/realme-9-pro-front-1.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Iphone 14 pro",
+        "desc": "Apple Iphone",
+        "price": "₹170000",
+        "color": "#33505a",
+        "image_url": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRBdvtqzTxLxNiTughZbQD1wcvu5uaVK2MrXfWwh72mMOAnozcYlV566L4R5iMyyMoA6RtkT2pAmF0XNMkM1szKHraNV6Q59san_kpJqNFd&usqp=CAE"
+      },
+      {
+        "id": 4,
+        "name": "Mi Trimmer",
+        "desc": "Beard Trimmer",
+        "price": "₹999",
+        "color": "#33505a",
+        "image_url": "https://m.media-amazon.com/images/I/61ApUe3q-PL._SX679_.jpg"
+      },
+      {
+        "id": 5,
+        "name": "The Almanack Of Naval Ravikant",
+        "desc": "English,Paperback",
+        "price": "₹200",
+        "color": "#33505a",
+        "image_url": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTZ3ULeq9LUAslHTNnqOUz2ooV0-bEhvKhTo1GQaKeE10lQqJ9jpgnlvSOMId8jGPjVZIzlLNS8_BsdEZz9plblh4ni0yv4P2ymxQPUENSxmGXcogwtsIUb&usqp=CAE"
+      },
+      {
+        "id": 6,
+        "name": "Puma MMS X-Ray",
+        "desc": "Men's Sneakers",
+        "price": "₹4200",
+        "color": "#33505a",
+        "image_url": "https://rukminim1.flixcart.com/image/832/832/xif0q/shoe/e/p/6/-original-imagg4zgbjfhhtfp.jpeg?q=70"
+      }
+    ]
+  }
+  

@@ -1,5 +1,4 @@
 // ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/pages/forgotpass.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.light,                                                               
       theme: MyTheme.lighttheme(context),
       darkTheme: MyTheme.darktheme(context),
       initialRoute: MyRoutes.homeRoute,
