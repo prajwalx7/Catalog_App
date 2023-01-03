@@ -1,6 +1,7 @@
 import 'package:cuberto_bottom_bar/cuberto_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_catalog/models/catalog.dart';
 import 'dart:convert';
 import 'package:flutter_catalog/widgets/drawer.dart';
 
@@ -24,9 +25,9 @@ class _HomePageState extends State<HomePage> {
       getGradient(Colors.deepPurple),
     ));
     tabs.add(
-        Tabs(Icons.search, "Search", Colors.pink, getGradient(Colors.pink)));
+        Tabs(Icons.search, "Search", Colors.amber, getGradient(Colors.amber)));
     tabs.add(Tabs(
-        Icons.favorite, "Wishlist", Colors.amber, getGradient(Colors.amber)));
+        Icons.favorite, "Wishlist", Colors.pink, getGradient(Colors.pink)));
     tabs.add(
         Tabs(Icons.person, "Account", Colors.teal, getGradient(Colors.teal)));
   }
@@ -84,26 +85,56 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: productsData.length,
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, mainAxisSpacing: 16, crossAxisSpacing: 16),
           itemBuilder: (context, index) {
+            final Item = productsData[index];
             return Card(
-              child: ListTile(
-                leading: Image.network(productsData[index]['image_url']),
-                title: Text(productsData[index]["name"]),
-                subtitle: Text(productsData[index]['desc'] ?? "null"),
-                trailing: Text(
-                  productsData[index]["price"].toString(),
-                  textScaleFactor: 1.2,
-                  style: TextStyle(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: GridTile(
+                header: Container(
+                  // ignore: sort_child_properties_last
+                  child: Text(
+                    productsData[index]["name"],
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
                     color: Colors.deepPurple,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
+                footer: Text(
+                  productsData[index]["price"].toString(),
+                ),
+                child: Image.network(productsData[index]['image_url']),
               ),
             );
           },
+          itemCount: productsData.length,
         ),
+        // child: ListView.builder(
+        //   itemCount: productsData.length,
+        //   itemBuilder: (context, index) {
+        //     return Card(
+        //       child: ListTile(
+        //         leading: Image.network(productsData[index]['image_url']),
+        //         title: Text(productsData[index]["name"]),
+        //         subtitle: Text(productsData[index]['desc'] ?? "null"),
+        //         trailing: Text(
+        //           productsData[index]["price"].toString(),
+        //           textScaleFactor: 1.2,
+        //           style: TextStyle(
+        //             color: Colors.deepPurple,
+        //             fontWeight: FontWeight.bold,
+        //           ),
+        //         ),
+        //       ),
+        //     );
+        //   },
+        // ),
       ),
       drawer: MyDrawer(),
     );
