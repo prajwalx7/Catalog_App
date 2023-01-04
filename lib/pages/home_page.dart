@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: CubertoBottomBar(
         // barBackgroundColor: Colors.black,
         key: Key("BottomBar"),
@@ -151,14 +151,10 @@ class CatalogItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VxBox(
-            //     child: Row(
-            //   children: [
-            //     Image.network(catalog['image_url']),
-            //   ],
-            // )
-            )
-        .white
-        .square(200)
-        .make();
+        child: Row(
+      children: [
+        Image.network(catalog['image_url']),
+      ],
+    )).white.square(200).make();
   }
 }
