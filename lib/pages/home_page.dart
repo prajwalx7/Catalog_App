@@ -1,9 +1,12 @@
+import 'dart:convert';
 import 'package:cuberto_bottom_bar/cuberto_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_catalog/models/catalog.dart';
-import 'dart:convert';
-import 'package:flutter_catalog/widgets/drawer.dart';
+import 'package:flutter_catalog/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+List productsData = [];
 
 // ignore: use_key_in_widget_constructors
 class HomePage extends StatefulWidget {
@@ -32,8 +35,6 @@ class _HomePageState extends State<HomePage> {
         Tabs(Icons.person, "Account", Colors.teal, getGradient(Colors.teal)));
   }
 
-  List productsData = [];
-
   loadData() async {
     String itemJson = await rootBundle.loadString("asset/files/items.json");
     final decodedData = jsonDecode(itemJson);
@@ -54,6 +55,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.amber,
       bottomNavigationBar: CubertoBottomBar(
         // barBackgroundColor: Colors.black,
         key: Key("BottomBar"),
@@ -80,63 +82,23 @@ class _HomePageState extends State<HomePage> {
           });
         },
       ),
-      appBar: AppBar(
-        title: Text("Products"),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisSpacing: 16, crossAxisSpacing: 16),
-          itemBuilder: (context, index) {
-            final Item = productsData[index];
-            return Card(
-              clipBehavior: Clip.antiAlias,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              child: GridTile(
-                header: Container(
-                  // ignore: sort_child_properties_last
-                  child: Text(
-                    productsData[index]["name"],
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple,
-                  ),
-                ),
-                footer: Text(
-                  productsData[index]["price"].toString(),
-                ),
-                child: Image.network(productsData[index]['image_url']),
-              ),
-            );
-          },
-          itemCount: productsData.length,
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m32,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CatalogHeader(),
+              // if (productsData.isEmpty)
+              CatalogList().expand(),
+              // else
+              //   Center(
+              //     child: CircularProgressIndicator(),
+              //   )
+            ],
+          ),
         ),
-        // child: ListView.builder(
-        //   itemCount: productsData.length,
-        //   itemBuilder: (context, index) {
-        //     return Card(
-        //       child: ListTile(
-        //         leading: Image.network(productsData[index]['image_url']),
-        //         title: Text(productsData[index]["name"]),
-        //         subtitle: Text(productsData[index]['desc'] ?? "null"),
-        //         trailing: Text(
-        //           productsData[index]["price"].toString(),
-        //           textScaleFactor: 1.2,
-        //           style: TextStyle(
-        //             color: Colors.deepPurple,
-        //             fontWeight: FontWeight.bold,
-        //           ),
-        //         ),
-        //       ),
-        //     );
-        //   },
-        // ),
       ),
-      drawer: MyDrawer(),
     );
   }
 }
@@ -148,4 +110,55 @@ class Tabs {
   final Gradient gradient;
 
   Tabs(this.icon, this.title, this.color, this.gradient);
+}
+
+class CatalogHeader extends StatelessWidget {
+  const CatalogHeader({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        "Catalog App".text.xl4.bold.color(MyTheme.darkbluishColor).make(),
+        "Trending Products".text.xl.make(),
+      ],
+    );
+  }
+}
+
+class CatalogList extends StatelessWidget {
+  const CatalogList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: productsData.length,
+      itemBuilder: (context, index) {
+        final catalog = productsData[index];
+        return CatalogItem(catalog: catalog);
+      },
+    );
+  }
+}
+
+class CatalogItem extends StatelessWidget {
+  final catalog;
+
+  const CatalogItem({super.key, required this.catalog});
+
+  @override
+  Widget build(BuildContext context) {
+    return VxBox(
+            //     child: Row(
+            //   children: [
+            //     Image.network(catalog['image_url']),
+            //   ],
+            // )
+            )
+        .white
+        .square(200)
+        .make();
+  }
 }
