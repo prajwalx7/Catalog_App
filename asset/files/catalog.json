@@ -4,97 +4,97 @@
         "id": 1,
         "name": "Boat Flash Edition",
         "desc": "Unisex Watch",
-        "price": "₹1799",
+        "price": "20",
         "color": "#33505a",
-        "image": "https://m.media-amazon.com/images/I/61hVGtfIXGL._SX522_.jpg"
+        "image": "asset/image/watch.png"
       },
       {
         "id": 2,
         "name": "Realme 9 pro+",
-        "desc": "OIS camera setup",
-        "price": "₹27999",
+        "desc": "Midnight Black,128 GB",
+        "price": "320",
         "color": "#33505a",
-        "image": "https://s3b.cashify.in/gpro/uploads/2021/04/16171243/realme-9-pro-front-1.jpg"
+        "image": "asset/image/realme9.png"
       },
       {
         "id": 3,
-        "name": "Iphone 14 pro",
-        "desc": "Apple Iphone",
-        "price": "₹170000",
+        "name": "Iphone 14 Pro Max",
+        "desc": "Deep Purple, 128 GB",
+        "price": "1500",
         "color": "#33505a",
-        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRBdvtqzTxLxNiTughZbQD1wcvu5uaVK2MrXfWwh72mMOAnozcYlV566L4R5iMyyMoA6RtkT2pAmF0XNMkM1szKHraNV6Q59san_kpJqNFd&usqp=CAE"
+        "image": "asset/image/iphone.png"
       },
       {
         "id": 4,
         "name": "Mi Trimmer",
         "desc": "Beard Trimmer",
-        "price": "₹999",
+        "price": "15",
         "color": "#33505a",
-        "image": "https://m.media-amazon.com/images/I/61ApUe3q-PL._SX679_.jpg"
+        "image": "asset/image/trimmer.png"
       },
       {
         "id": 5,
         "name": "The Almanack Of Naval Ravikant",
         "desc": "English,Paperback",
-        "price": "₹200",
+        "price": "2",
         "color": "#33505a",
-        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTZ3ULeq9LUAslHTNnqOUz2ooV0-bEhvKhTo1GQaKeE10lQqJ9jpgnlvSOMId8jGPjVZIzlLNS8_BsdEZz9plblh4ni0yv4P2ymxQPUENSxmGXcogwtsIUb&usqp=CAE"
+        "image": "asset/image/watch.png"
       },
       {
         "id": 6,
         "name": "Puma MMS X-Ray",
         "desc": "Men's Sneakers",
-        "price": "₹4200",
+        "price": "50",
         "color": "#33505a",
-        "image": "https://rukminim1.flixcart.com/image/832/832/xif0q/shoe/e/p/6/-original-imagg4zgbjfhhtfp.jpeg?q=70"
+        "image": "asset/image/xray.png"
       },
       {
         "id": 7,
         "name": "Boult Audio Xpods",
         "desc": "True Wireless",
-        "price": "₹1399",
+        "price": "17",
         "color": "#33505a",
-        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRDy8T6dxjMm08s6CEjcYyHap_1FXEvc3PZ5T1ckPsj-3robT0wat9x4nLYVIaGZKounwjjbGUEz1dcu9Ft6IRJMjvqrB_DzpgBmfdZHJE&usqp=CAE"
+        "image": "asset/image/xpods.png"
       },
       {
         "id": 8,
         "name": "Asus Rog Strix G17",
         "desc": "(2022)Gaming Edition",
-        "price": "₹99000",
+        "price": "1800",
         "color": "#33505a",
-        "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQKZQxgEI5s7hZlx_M2UPLusPd2VXy5TI8dmna2suWvPUSKf93xmw2nzGr8fxSMpah2Ohhe6n2adw&usqp=CAc"
+        "image": "asset/image/rog.png"
       },
       {
         "id": 9,
         "name": "Men Regular Fit Checkered shirt",
         "desc": "By Roadster",
-        "price": "₹599",
+        "price": "6",
         "color": "#33505a",
-        "image": "https://rukminim1.flixcart.com/image/832/832/k0463rk0/shirt/s/g/e/42-9951567-roadster-original-imafjuykckph7ket.jpeg?q=70"
+        "image": "asset/image/shirt.png"
       },
       {
         "id": 10,
         "name": "Lavender Face Wash",
         "desc": "Aroma Magic",
-        "price": "₹175",
+        "price": "3",
         "color": "#33505a",
-        "image": "https://cdn.shopify.com/s/files/1/2801/8342/products/Lavender-Face-Wash-A_720x.jpg?v=1610107055"
+        "image": "asset/image/facewash.png"
       },
       {
         "id": 11,
         "name": "DENVER SRK Emperor Deodorant",
-        "desc": "Spray - For Men  (140 ml)",
-        "price": "₹199",
+        "desc": "Spray - For Men (140 ml)",
+        "price": "5",
         "color": "#33505a",
-        "image": "https://rukminim1.flixcart.com/image/416/416/k1s6ljk0/deodorant/v/y/n/150-srk-emperor-deodorant-autograph-collection-deodorant-spray-original-imafh9buht2wzfga.jpeg?q=70"
+        "image": "asset/image/denver.png"
       },
       {
         "id": 12,
         "name": "Belear I-280 38 Acoustic Guitar",
         "desc": "Dual Action Truss Rod",
-        "price": "₹2599",
+        "price": "30",
         "color": "#33505a",
-        "image": "https://rukminim1.flixcart.com/image/416/416/xif0q/acoustic-guitar/r/g/6/i-280-38-inch-blue-spruce-cutaway-acoustic-guitar-with-dual-original-imagjpvf9wh4bkeg.jpeg?q=70"
+        "image": "asset/image/guitar.png"
       }
     ]
   }
