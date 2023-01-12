@@ -1,5 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -30,121 +33,109 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
-        child: SingleChildScrollView(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                Image.asset(
-                  "asset/image/hey.png",
-                  fit: BoxFit.cover,
+      color: context.canvasColor,
+      child: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              Image.asset(
+                "asset/image/hey.png",
+                fit: BoxFit.cover,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Hello Again! $name",
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
                 ),
-                SizedBox(
-                  height: 20,
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Text(
+                "Welcome back, you've been missed!",
+                style: TextStyle(
+                  fontSize: 18,
                 ),
-                Text(
-                  "Hello Again! $name",
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Text(
-                  "Welcome back, you've been missed!",
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 16.0, horizontal: 32.0),
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        decoration: InputDecoration(
-                            hintText: "Enter Username",
-                            labelText: "Username",
-                            border: OutlineInputBorder()),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return "Username cannot be empty";
-                          }
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 16.0, horizontal: 32.0),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: InputDecoration(
+                          hintText: "Enter Username",
+                          labelText: "Username",
+                          border: OutlineInputBorder()),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Username cannot be empty";
+                        }
+                        return null;
+                      },
+                      onChanged: ((value) {
+                        name = value;
+                        setState(() {});
+                      }),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          hintText: "Enter Password",
+                          labelText: "Password",
+                          border: OutlineInputBorder()),
+                      validator: (value) {
+                        if (value != null && value.length < 6) {
+                          return "Password length should be atleaast 6";
+                        } else {
                           return null;
-                        },
-                        onChanged: ((value) {
-                          name = value;
-                          setState(() {});
-                        }),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      TextFormField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                            hintText: "Enter Password",
-                            labelText: "Password",
-                            border: OutlineInputBorder()),
-                        validator: (value) {
-                          if (value != null && value.length < 6) {
-                            return "Password length should be atleaast 6";
-                          } else {
-                            return null;
-                          }
-                        },
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      InkWell(
-                        onTap: () => moveToHome(context),
-                        child: AnimatedContainer(
-                          duration: Duration(seconds: 8),
-                          width: changeButton ? 40 : 130,
-                          height: 40,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: Colors.deepPurple,
-                            borderRadius:
-                                BorderRadius.circular(changeButton ? 40 : 8),
-                          ),
-                          child: changeButton
-                              ? Icon(
-                                  Icons.done_outline_rounded,
-                                  color: Colors.white,
-                                )
-                              : Text(
-                                  "Login",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18),
-                                ),
+                        }
+                      },
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    InkWell(
+                      onTap: () => moveToHome(context),
+                      child: AnimatedContainer(
+                        duration: Duration(seconds: 1),
+                        width: changeButton ? 40 : 130,
+                        height: 40,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: context.theme.buttonColor,
+                          borderRadius:
+                              BorderRadius.circular(changeButton ? 40 : 8),
                         ),
+                        child: changeButton
+                            ? Icon(
+                                Icons.done_outline_rounded,
+                                color: Colors.white,
+                              )
+                            : Text(
+                                "Login",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18),
+                              ),
                       ),
-                      SizedBox(
-                        height: 60,
-                      ),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: Colors.white),
-                        onPressed: (() {
-                          Navigator.pushNamed(context, MyRoutes.forgotRoute);
-                        }),
-                        child: Text(
-                          "Forgot Password,click here!",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

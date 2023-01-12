@@ -11,7 +11,7 @@
       {
         "id": 2,
         "name": "Realme 9 pro+",
-        "desc": "Midnight Black,128 GB",
+        "desc": "Midnight Black, 128 GB",
         "price": "320",
         "color": "#33505a",
         "image": "asset/image/realme9.png"
@@ -38,7 +38,7 @@
         "desc": "English,Paperback",
         "price": "2",
         "color": "#33505a",
-        "image": "asset/image/watch.png"
+        "image": "asset/image/naval.png"
       },
       {
         "id": 6,
@@ -66,7 +66,7 @@
       },
       {
         "id": 9,
-        "name": "Men Regular Fit Checkered shirt",
+        "name": "Men Checkered shirt",
         "desc": "By Roadster",
         "price": "6",
         "color": "#33505a",
@@ -82,7 +82,7 @@
       },
       {
         "id": 11,
-        "name": "DENVER SRK Emperor Deodorant",
+        "name": "DENVER SRK Emperor",
         "desc": "Spray - For Men (140 ml)",
         "price": "5",
         "color": "#33505a",
@@ -90,7 +90,7 @@
       },
       {
         "id": 12,
-        "name": "Belear I-280 38 Acoustic Guitar",
+        "name": "Belear I-280 38",
         "desc": "Dual Action Truss Rod",
         "price": "30",
         "color": "#33505a",
