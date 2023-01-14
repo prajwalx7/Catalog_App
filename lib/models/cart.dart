@@ -1,12 +1,16 @@
 import 'package:flutter_catalog/models/catalog.dart';
 
 class CartModel {
+  static final cartModel = CartModel._internal();
+  CartModel._internal();
+  factory CartModel() => cartModel;
+
   late CatalogModel _catalog;
 
   final List<int> _itemIds = [];
 
   // ignore: unnecessary_getters_setters
-  CatalogModel get ycatalog => _catalog;
+  CatalogModel get catalog => _catalog;
 
   set catalog(CatalogModel newCatalog) {
     _catalog = newCatalog;
