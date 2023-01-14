@@ -1,14 +1,23 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static List<Item>? items;
+  // var items = [];
+  List<Item> items = [];
+
+  //get by id
+  Item getById(int id) => items.firstWhere(
+        (element) => element.id == id,
+      );
+
+  //get by position
+  Item getByPositon(int pos) => items[pos];
 }
 
 class Item {
-  final int id;
+  int id;
   final String name;
   final String desc;
-  final String price;
+  final int price;
   final String color;
   final String image;
 
@@ -24,7 +33,7 @@ class Item {
     int? id,
     String? name,
     String? desc,
-    String? price,
+    int? price,
     String? color,
     String? image,
   }) {
@@ -54,7 +63,7 @@ class Item {
       id: map['id'] as int,
       name: map['name'] as String,
       desc: map['desc'] as String,
-      price: map['price'] as String,
+      price: map['price'] as int,
       color: map['color'] as String,
       image: map['image'] as String,
     );

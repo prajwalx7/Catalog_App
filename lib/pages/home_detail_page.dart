@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter_catalog/models/catalog.dart';
 
@@ -67,6 +66,7 @@ class HomeDetailPage extends StatelessWidget {
                       "Et kasd stet invidunt invidunt ut et eirmod ipsum labore, rebum sadipscing sit sed kasd lorem voluptua dolore labore voluptua, lorem rebum et ea amet dolore at sed ipsum, lorem at sanctus voluptua nonumy. Lorem dolor ipsum lorem erat clita sed vero clita. Takimata duo amet ipsum ipsum amet invidunt. Et erat diam at rebum lorem et clita magna clita. Erat dolor nonumy erat aliquyam no ipsum kasd takimata invidunt."
                           .text
                           .textStyle(context.captionStyle)
+                          .align(TextAlign.center)
                           .make()
                           .p16()
                     ],

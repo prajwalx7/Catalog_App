@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -68,6 +69,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: [
                     TextFormField(
+                      inputFormatters: [
+                        LengthLimitingTextInputFormatter(8),
+                      ],
                       decoration: InputDecoration(
                           hintText: "Enter Username",
                           labelText: "Username",
@@ -76,6 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                         if (value!.isEmpty) {
                           return "Username cannot be empty";
                         }
+
                         return null;
                       },
                       onChanged: ((value) {

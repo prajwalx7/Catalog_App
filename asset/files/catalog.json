@@ -4,7 +4,7 @@
         "id": 1,
         "name": "Boat Flash Edition",
         "desc": "Unisex Watch",
-        "price": "20",
+        "price": 20,
         "color": "#33505a",
         "image": "asset/image/watch.png"
       },
@@ -12,7 +12,7 @@
         "id": 2,
         "name": "Realme 9 pro+",
         "desc": "Midnight Black, 128 GB",
-        "price": "320",
+        "price": 320,
         "color": "#33505a",
         "image": "asset/image/realme9.png"
       },
@@ -20,7 +20,7 @@
         "id": 3,
         "name": "Iphone 14 Pro Max",
         "desc": "Deep Purple, 128 GB",
-        "price": "1500",
+        "price": 1500,
         "color": "#33505a",
         "image": "asset/image/iphone.png"
       },
@@ -28,23 +28,23 @@
         "id": 4,
         "name": "Mi Trimmer",
         "desc": "Beard Trimmer",
-        "price": "15",
+        "price": 15,
         "color": "#33505a",
         "image": "asset/image/trimmer.png"
       },
       {
         "id": 5,
-        "name": "The Almanack Of Naval Ravikant",
-        "desc": "English,Paperback",
-        "price": "2",
+        "name": "Samsung Galaxy S22 Ultra 5G",
+        "desc": "Green, 12GB, 256GB Storage",
+        "price": 1100,
         "color": "#33505a",
-        "image": "asset/image/naval.png"
+        "image": "asset/image/s22ult.png"
       },
       {
         "id": 6,
         "name": "Puma MMS X-Ray",
         "desc": "Men's Sneakers",
-        "price": "50",
+        "price": 50,
         "color": "#33505a",
         "image": "asset/image/xray.png"
       },
@@ -52,7 +52,7 @@
         "id": 7,
         "name": "Boult Audio Xpods",
         "desc": "True Wireless",
-        "price": "17",
+        "price": 17,
         "color": "#33505a",
         "image": "asset/image/xpods.png"
       },
@@ -60,7 +60,7 @@
         "id": 8,
         "name": "Asus Rog Strix G17",
         "desc": "(2022)Gaming Edition",
-        "price": "1800",
+        "price": 1800,
         "color": "#33505a",
         "image": "asset/image/rog.png"
       },
@@ -68,7 +68,7 @@
         "id": 9,
         "name": "Men Checkered shirt",
         "desc": "By Roadster",
-        "price": "6",
+        "price": 6,
         "color": "#33505a",
         "image": "asset/image/shirt.png"
       },
@@ -76,7 +76,7 @@
         "id": 10,
         "name": "Lavender Face Wash",
         "desc": "Aroma Magic",
-        "price": "3",
+        "price": 3,
         "color": "#33505a",
         "image": "asset/image/facewash.png"
       },
@@ -84,7 +84,7 @@
         "id": 11,
         "name": "DENVER SRK Emperor",
         "desc": "Spray - For Men (140 ml)",
-        "price": "5",
+        "price": 5,
         "color": "#33505a",
         "image": "asset/image/denver.png"
       },
@@ -92,7 +92,7 @@
         "id": 12,
         "name": "Belear I-280 38",
         "desc": "Dual Action Truss Rod",
-        "price": "30",
+        "price": 30,
         "color": "#33505a",
         "image": "asset/image/guitar.png"
       }
