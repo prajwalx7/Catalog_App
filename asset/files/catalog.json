@@ -10,11 +10,11 @@
       },
       {
         "id": 2,
-        "name": "Realme 9 pro+",
-        "desc": "Midnight Black, 128 GB",
-        "price": 320,
+        "name": "Nothing phone 1",
+        "desc": "Black (8 GB, 128 GB)",
+        "price": 400,
         "color": "#33505a",
-        "image": "asset/image/realme9.png"
+        "image": "asset/image/phone1.png"
       },
       {
         "id": 3,

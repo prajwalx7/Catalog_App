@@ -1,19 +1,25 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static final catModel = CatalogModel._internal();
-  CatalogModel._internal();
-  factory CatalogModel() => catModel;
-  // var items = [];
-  List<Item> items = [];
+  static List<Item> items = [];
 
-  //get by id
-  Item getById(int id) => items.firstWhere(
-        (element) => element.id == id,
-      );
+  Item getById(int id) {
+    if (items.isEmpty) {
+      throw StateError('No items in catalog');
+    }
+    var item = items.firstWhere((element) => element.id == id);
+    if (item == null) {
+      throw StateError('Item with ID $id not found');
+    }
+    return item;
+  }
 
-  //get by position
-  Item getByPositon(int pos) => items[pos];
+  Item getByPosition(int pos) {
+    if (items.isEmpty) {
+      throw StateError('No items in catalog');
+    }
+    return items[pos];
+  }
 }
 
 class Item {
