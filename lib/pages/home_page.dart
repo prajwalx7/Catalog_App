@@ -1,24 +1,24 @@
-// ignore_for_file: deprecated_member_use
-
-import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_catalog/core/store.dart';
+import 'package:flutter_catalog/models/cart.dart';
+import 'dart:convert';
+import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/utils/routes.dart';
+import 'package:flutter_catalog/widgets/home_widgets/catalog_header.dart';
 import 'package:flutter_catalog/widgets/home_widgets/catalog_list.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:flutter_catalog/models/catalog.dart';
-import '../widgets/home_widgets/catalog_header.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  late CatalogModel catalogModel;
   @override
   void initState() {
     super.initState();
@@ -26,45 +26,57 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    catalogModel = CatalogModel();
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(Duration(seconds: 2));
     final catalogJson = await rootBundle.loadString("asset/files/catalog.json");
     final decodedData = jsonDecode(catalogJson);
     var productsData = decodedData["products"];
-    print(productsData);
-    CatalogModel.items = List.from(productsData).map<Item>((item) {
-      return Item.fromMap(item);
-    }).toList();
+    CatalogModel.items = List.from(productsData)
+        .map<Item>((item) => Item.fromMap(item))
+        .toList();
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
-      backgroundColor: context.canvasColor,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartpageRoute),
-        backgroundColor: context.theme.buttonColor,
-        child: Icon(
-          CupertinoIcons.cart,
-          color: Colors.white,
+        backgroundColor: context.canvasColor,
+        floatingActionButton: VxBuilder(
+          mutations: {AddMutation, RemoveMutation},
+          builder: (ctx, _, __) => FloatingActionButton(
+            onPressed: () =>
+                Navigator.pushNamed(context, MyRoutes.cartpageRoute),
+            // ignore: deprecated_member_use
+            backgroundColor: context.theme.buttonColor,
+            child: Icon(
+              CupertinoIcons.cart,
+              color: Colors.white,
+            ),
+          ).badge(
+              color: Vx.gray200,
+              size: 22,
+              count: _cart.items.length,
+              textStyle: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              )),
         ),
-      ),
-      body: SafeArea(
-        child: Container(
-          padding: Vx.m32,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CatalogHeader(),
-              if (CatalogModel.items.isNotEmpty)
-                CatalogList(catalogModel: catalogModel).py16().expand()
-              else
-                CircularProgressIndicator().centered().expand(),
-            ],
+        body: SafeArea(
+          child: Container(
+            padding: Vx.m32,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CatalogHeader(),
+                if (CatalogModel.items.isNotEmpty)
+                  CatalogList(
+                    catalogModel: CatalogModel(),
+                  ).py16().expand()
+                else
+                  CircularProgressIndicator().centered().expand(),
+              ],
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

@@ -23,7 +23,7 @@ class MyTheme {
   static ThemeData darktheme(BuildContext context) => ThemeData(
         fontFamily: GoogleFonts.poppins().fontFamily,
         brightness: Brightness.dark,
-        cardColor: Colors.black,
+        cardColor: Color.fromARGB(255, 22, 22, 22),
         canvasColor: darkCreamColor,
         buttonColor: lightbluishColor,
         accentColor: Vx.white,
@@ -38,8 +38,8 @@ class MyTheme {
         ),
       );
 
-  static Color creamColor = Color(0xfff5f5f5);
-  static Color darkCreamColor = Vx.gray900;
+  static Color creamColor = Color.fromARGB(255, 221, 218, 218);
+  static Color darkCreamColor = Color.fromARGB(255, 30, 33, 37);
   static Color darkbluishColor = Color(0xff403b58);
   static Color lightbluishColor = Vx.indigo500;
 }

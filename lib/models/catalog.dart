@@ -8,9 +8,6 @@ class CatalogModel {
       throw StateError('No items in catalog');
     }
     var item = items.firstWhere((element) => element.id == id);
-    if (item == null) {
-      throw StateError('Item with ID $id not found');
-    }
     return item;
   }
 

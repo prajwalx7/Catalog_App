@@ -9,16 +9,22 @@ class CatalogHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        "Catalog App"
-            .text
-            .xl4
-            .bold
-            .color(context.theme.colorScheme.secondary)
-            .make(),
-        "Trending Products"
-            .text
-            .xl
-            .make(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                "Catalog App"
+                    .text
+                    .xl4
+                    .bold
+                    .color(context.theme.colorScheme.secondary)
+                    .make(),
+              ],
+            ),
+          ],
+        ),
+        "Trending Products".text.xl.make(),
       ],
     );
   }
