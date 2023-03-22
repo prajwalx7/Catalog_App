@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_catalog/core/store.dart';
 import 'package:flutter_catalog/models/cart.dart';
@@ -59,6 +60,7 @@ class _HomePageState extends State<HomePage> {
               textStyle: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
+                // CircularProgressIndicator().centered().expand(),
               )),
         ),
         body: SafeArea(
@@ -73,7 +75,11 @@ class _HomePageState extends State<HomePage> {
                     catalogModel: CatalogModel(),
                   ).py16().expand()
                 else
-                  CircularProgressIndicator().centered().expand(),
+                  Center(
+                    child: 
+                          (Lottie.network(
+                          "https://assets8.lottiefiles.com/packages/lf20_XabKIoAyXA.json")),                                                
+                  ),
               ],
             ),
           ),

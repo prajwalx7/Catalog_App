@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -40,12 +41,14 @@ class _LoginPageState extends State<LoginPage> {
           key: _formKey,
           child: Column(
             children: [
-              Image.asset(
-                "asset/image/hey.png",
-                fit: BoxFit.cover,
-              ),
-              SizedBox(
-                height: 20,
+              ClipRect(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  heightFactor: 0.8,
+                  child: Lottie.network(
+                      "https://assets9.lottiefiles.com/packages/lf20_yupefrh2.json",
+                      fit: BoxFit.fitHeight),
+                ),
               ),
               Text(
                 "Hello Again! $name",
@@ -55,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 10,
               ),
               Text(
                 "Welcome back, you've been missed!",
