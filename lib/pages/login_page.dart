@@ -75,7 +75,8 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(
                           hintText: "Enter Username",
                           labelText: "Username",
-                          border: OutlineInputBorder()),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30))),
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Username cannot be empty";
@@ -96,7 +97,8 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(
                           hintText: "Enter Password",
                           labelText: "Password",
-                          border: OutlineInputBorder()),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30))),
                       validator: (value) {
                         if (value != null && value.length < 6) {
                           return "Password length should be atleaast 6";
@@ -106,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
                     InkWell(
                       onTap: () => moveToHome(context),
