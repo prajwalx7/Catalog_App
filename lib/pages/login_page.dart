@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_fileeprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -34,16 +34,16 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: context.canvasColor,
-      child: SingleChildScrollView(
+    return Scaffold(
+      resizeToAvoidBottomInset: true,
+      body: SingleChildScrollView(
         child: Form(
           key: _formKey,
           child: Column(
             children: [
               ClipRect(
                 child: Align(
-                  alignment: Alignment.bottomCenter,
+                  alignment: Alignment.center,
                   heightFactor: 0.8,
                   child: Lottie.network(
                       "https://assets9.lottiefiles.com/packages/lf20_yupefrh2.json",
@@ -72,6 +72,8 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: [
                     TextFormField(
+                      textInputAction: TextInputAction.next,
+                      autofocus: true,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(8),
                       ],
@@ -96,6 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 20,
                     ),
                     TextFormField(
+                      autofocus: true,
                       obscureText: true,
                       decoration: InputDecoration(
                           hintText: "Enter Password",
@@ -141,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

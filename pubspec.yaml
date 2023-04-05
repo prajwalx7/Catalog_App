@@ -39,6 +39,7 @@ dependencies:
   velocity_x: ^3.6.0
   lottie: ^2.3.0
   http: ^0.13.0
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:

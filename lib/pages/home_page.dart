@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               )),
         ),
         body: SafeArea(
-          child: Container(
+          child: Padding(
             padding: Vx.m32,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,10 +75,15 @@ class _HomePageState extends State<HomePage> {
                     catalogModel: CatalogModel(),
                   ).py16().expand()
                 else
-                  Center(
-                    child: 
-                          (Lottie.network(
-                          "https://assets8.lottiefiles.com/packages/lf20_XabKIoAyXA.json")),                                                
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 100,
+                      ),
+                      Lottie.network(
+                        "https://assets8.lottiefiles.com/packages/lf20_XabKIoAyXA.json",
+                      ),
+                    ],
                   ),
               ],
             ),
