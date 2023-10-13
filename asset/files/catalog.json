@@ -2,32 +2,32 @@
     "products": [
       {
         "id": 1,
-        "name": "Boat Flash Edition",
-        "desc": "Unisex Watch",
-        "price": 20,
+        "name": "Boult Rover",
+        "desc": "OLED 1'4",
+        "price": 35,
         "color": "#33505a",
-        "image": "asset/image/watch.png"
+        "image": "asset/image/rover.png"
       },
       {
         "id": 2,
-        "name": "Nothing phone 1",
-        "desc": "Black (8 GB, 128 GB)",
-        "price": 400,
+        "name": "Nothing phone 2",
+        "desc": "Black (12 GB, 256 GB)",
+        "price": 599,
         "color": "#33505a",
-        "image": "asset/image/phone1.png"
+        "image": "asset/image/phone2.png"
       },
       {
         "id": 3,
         "name": "Iphone 14 Pro Max",
         "desc": "Deep Purple, 128 GB",
-        "price": 1500,
+        "price": 1099,
         "color": "#33505a",
         "image": "asset/image/iphone.png"
       },
       {
         "id": 4,
         "name": "Mi Trimmer",
-        "desc": "Beard Trimmer",
+        "desc": "Wireless Trimmer",
         "price": 15,
         "color": "#33505a",
         "image": "asset/image/trimmer.png"
@@ -36,23 +36,23 @@
         "id": 5,
         "name": "Samsung Galaxy S22 Ultra 5G",
         "desc": "Green, 12GB, 256GB Storage",
-        "price": 1100,
+        "price": 1199,
         "color": "#33505a",
         "image": "asset/image/s22ult.png"
       },
       {
         "id": 6,
-        "name": "Puma MMS X-Ray",
-        "desc": "Men's Sneakers",
-        "price": 50,
+        "name": "Nothing Ear 2",
+        "desc": "Dual chamber sound, Smart ANC",
+        "price": 120,
         "color": "#33505a",
-        "image": "asset/image/xray.png"
+        "image": "asset/image/ear2.png"
       },
       {
         "id": 7,
         "name": "Boult Audio Xpods",
-        "desc": "True Wireless",
-        "price": 17,
+        "desc": "13mm drivers, ENC",
+        "price": 20,
         "color": "#33505a",
         "image": "asset/image/xpods.png"
       },
@@ -66,35 +66,43 @@
       },
       {
         "id": 9,
-        "name": "Men Checkered shirt",
-        "desc": "By Roadster",
-        "price": 6,
+        "name": "Alienware X16",
+        "desc": "RTX 4090Ti (32GB RAM, 2TB SSD)",
+        "price": 2999,
         "color": "#33505a",
-        "image": "asset/image/shirt.png"
+        "image": "asset/image/x16.png"
       },
       {
         "id": 10,
-        "name": "Lavender Face Wash",
-        "desc": "Aroma Magic",
-        "price": 3,
+        "name": "ALienware Monitor",
+        "desc": "360Hz",
+        "price": 1299,
         "color": "#33505a",
-        "image": "asset/image/facewash.png"
+        "image": "asset/image/moni.png"
       },
       {
         "id": 11,
-        "name": "DENVER SRK Emperor",
-        "desc": "Spray - For Men (140 ml)",
-        "price": 5,
+        "name": "RedGear A-10 wired mouse",
+        "desc": "Lightweight with RGB",
+        "price": 15,
         "color": "#33505a",
-        "image": "asset/image/denver.png"
+        "image": "asset/image/gmouse.png"
       },
       {
         "id": 12,
-        "name": "Belear I-280 38",
-        "desc": "Dual Action Truss Rod",
-        "price": 30,
+        "name": "RedGear pro wireless gamepad",
+        "desc": "Dual Intensity Motor",
+        "price": 40,
         "color": "#33505a",
-        "image": "asset/image/guitar.png"
+        "image": "asset/image/gamepad.png"
+      },
+      {
+        "id": 13,
+        "name": "Asus GeForce RTX 4090Ti",
+        "desc": "24GB, GDDR6X",
+        "price": 1699,
+        "color": "#33505a",
+        "image": "asset/image/4090.png"
       }
     ]
   }

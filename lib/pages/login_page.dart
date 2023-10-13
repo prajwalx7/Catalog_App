@@ -18,13 +18,12 @@ class _LoginPageState extends State<LoginPage> {
   bool changeButton = false;
   final _formKey = GlobalKey<FormState>();
 
-  moveToHome(BuildContext context) async {
+  moveToHome(context) async {
     if (_formKey.currentState!.validate()) {
       setState(() {
         changeButton = true;
       });
       await Future.delayed(Duration(seconds: 1));
-      // ignore: use_build_context_synchronously
       await Navigator.pushNamed(context, MyRoutes.homeRoute);
       setState(() {
         changeButton = false;
@@ -55,6 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
+                  color: context.theme.colorScheme.secondary,
                 ),
               ),
               SizedBox(
@@ -64,6 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                 "Welcome back, you've been missed!",
                 style: TextStyle(
                   fontSize: 18,
+                  color: context.theme.colorScheme.secondary,
                 ),
               ),
               Padding(
@@ -78,10 +79,22 @@ class _LoginPageState extends State<LoginPage> {
                         LengthLimitingTextInputFormatter(8),
                       ],
                       decoration: InputDecoration(
-                          hintText: "Enter Username",
-                          labelText: "Username",
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30))),
+                        hintText: "Enter Username",
+                        hintStyle: TextStyle(
+                          color: context.theme.colorScheme.secondary,
+                        ),
+                        labelText: "Username",
+                        labelStyle: TextStyle(
+                          color: context.theme.colorScheme.secondary,
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      style: TextStyle(
+                        color: context.theme.colorScheme.secondary,
+                      ),
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Username cannot be empty";
@@ -101,10 +114,21 @@ class _LoginPageState extends State<LoginPage> {
                       autofocus: true,
                       obscureText: true,
                       decoration: InputDecoration(
-                          hintText: "Enter Password",
-                          labelText: "Password",
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30))),
+                        hintText: "Enter Password",
+                        hintStyle: TextStyle(
+                          color: context.theme.colorScheme.secondary,
+                        ),
+                        labelText: "Password",
+                        labelStyle: TextStyle(
+                          color: context.theme.colorScheme.secondary,
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      style: TextStyle(
+                        color: context.theme.colorScheme.secondary,
+                      ),
                       validator: (value) {
                         if (value != null && value.length < 6) {
                           return "Password length should be atleaast 6";
@@ -124,14 +148,14 @@ class _LoginPageState extends State<LoginPage> {
                         height: 40,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          color: context.theme.buttonTheme.colorScheme?.primary,
+                          color: Colors.deepPurple,
                           borderRadius:
                               BorderRadius.circular(changeButton ? 40 : 8),
                         ),
                         child: changeButton
                             ? Icon(
                                 Icons.done_outline_rounded,
-                                color: Colors.white,
+                                color: context.theme.colorScheme.secondary,
                               )
                             : Text(
                                 "Login",

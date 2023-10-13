@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   final themeProvider = THemeProvider();
   @override
   Widget build(BuildContext context) {
+    themeProvider.isDark = true;
     return ChangeNotifierProvider<THemeProvider>(
       create: (_) => themeProvider,
       child: Consumer<THemeProvider>(builder: (context, model, _) {

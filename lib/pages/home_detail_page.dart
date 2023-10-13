@@ -60,6 +60,7 @@ class HomeDetailPage extends StatelessWidget {
                           .text
                           .textStyle(context.captionStyle)
                           .align(TextAlign.center)
+                          .color(context.theme.colorScheme.secondary)
                           .make()
                           .p16()
                     ],

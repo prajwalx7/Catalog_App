@@ -40,12 +40,12 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final cart = (VxState.store as MyStore).cart;
     return Scaffold(
-      backgroundColor: context.canvasColor,
+      backgroundColor: Theme.of(context).canvasColor,
       floatingActionButton: VxBuilder(
         mutations: {AddMutation, RemoveMutation},
         builder: (ctx, _, __) => FloatingActionButton(
           onPressed: () => Navigator.pushNamed(context, MyRoutes.cartpageRoute),
-          backgroundColor: Color(0xff403b58),
+          backgroundColor: Color(0xff1F4172),
           child: Icon(
             CupertinoIcons.cart,
             color: Colors.white,
@@ -77,8 +77,8 @@ class HomePageState extends State<HomePage> {
                     SizedBox(
                       height: 100,
                     ),
-                    Lottie.network(
-                      "https://assets8.lottiefiles.com/packages/lf20_XabKIoAyXA.json",
+                    Lottie.asset(
+                      "asset/files/truck.json",
                     ),
                   ],
                 ),

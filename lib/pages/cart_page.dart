@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/core/store.dart';
 import 'package:flutter_catalog/models/cart.dart';
@@ -14,7 +12,7 @@ class CartPage extends StatelessWidget {
       backgroundColor: context.canvasColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: "Cart".text.make(),
+        title: "Cart".text.color(context.theme.colorScheme.secondary).make(),
       ),
       body: Column(
         children: [
@@ -75,16 +73,28 @@ class _CartList extends StatelessWidget {
     VxState.watch(context, on: [RemoveMutation]);
     final CartModel cart = (VxState.store as MyStore).cart;
     return cart.items.isEmpty
-        ? "Cart is Empty".text.xl2.makeCentered()
+        ? "Cart is Empty"
+            .text
+            .xl2
+            .color(context.theme.colorScheme.secondary)
+            .makeCentered()
         : ListView.builder(
             itemCount: cart.items.length,
             itemBuilder: (context, index) => ListTile(
-              leading: Icon(Icons.done),
+              leading: Icon(
+                Icons.done,
+                color: context.theme.colorScheme.secondary,
+              ),
               trailing: IconButton(
-                icon: Icon(Icons.remove_circle_outline),
+                icon: Icon(
+                  Icons.remove_circle_outline,
+                  color: context.theme.colorScheme.secondary,
+                ),
                 onPressed: () => RemoveMutation(cart.items[index]),
               ),
-              title: cart.items[index].name.text.make(),
+              title: cart.items[index].name.text
+                  .color(context.theme.colorScheme.secondary)
+                  .make(),
             ),
           );
   }

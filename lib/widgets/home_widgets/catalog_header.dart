@@ -32,15 +32,26 @@ class _CatalogHeaderState extends State<CatalogHeader> {
                 .color(context.theme.colorScheme.secondary)
                 .make(),
             IconButton(
-                onPressed: () {
-                  changeTheme();
-                },
-                icon: Provider.of<THemeProvider>(context).isDark
-                    ? Icon(Icons.dark_mode)
-                    : Icon(Icons.light_mode))
+              onPressed: () {
+                changeTheme();
+              },
+              icon: Provider.of<THemeProvider>(context).isDark
+                  ? Icon(
+                      Icons.dark_mode,
+                      color: (context.theme.colorScheme.secondary),
+                    )
+                  : Icon(
+                      Icons.light_mode,
+                      color: (context.theme.colorScheme.secondary),
+                    ),
+            )
           ],
         ),
-        "Trending Products".text.xl.make(),
+        "Trending Products"
+            .text
+            .xl
+            .color(context.theme.colorScheme.secondary)
+            .make(),
       ],
     );
   }
